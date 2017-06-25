@@ -15,8 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+# as of django 1.10 you must import the function
+# and pass that in
+from blog import views as blog_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index/', include('blog.urls')),
+    url(r'^blog/$', blog_view.blog_home),
+    #url(r'^blog/$', <function_name>) after you have imported the function
 ]
+
+
+# as of django 1.10 this is not correct
+#url(r'^blog/$', "<appname>.views.<function_name")
