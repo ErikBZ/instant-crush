@@ -1,0 +1,10 @@
+<!-- DOCTYPE html -->
+<html>
+    <body style="width:60%; margin:auto">
+        <h1> Here's a list of all the blogs in no particular order!</h1>
+
+        {% for obj in objects %}
+            <a href='{{ obj.get_url }}'> {{ obj.title }}</a><br/>
+        {% endfor %}
+    </body>
+</html>

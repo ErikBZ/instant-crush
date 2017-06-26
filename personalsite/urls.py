@@ -21,7 +21,7 @@ from blog import views as blog_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^blog/$', blog_view.blog_home),
+    url(r'^blog/', include("blog.urls")),
     #url(r'^blog/$', <function_name>) after you have imported the function
 ]
 
