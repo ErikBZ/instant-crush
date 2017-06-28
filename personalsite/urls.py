@@ -19,11 +19,15 @@ from django.contrib import admin
 # and pass that in
 from blog import views as blog_view
 
+# TAKES THIS OUT BEFORE PRODUCTION
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include("blog.urls")),
     #url(r'^blog/$', <function_name>) after you have imported the function
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
 # as of django 1.10 this is not correct

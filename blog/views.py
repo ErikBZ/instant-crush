@@ -16,9 +16,6 @@ def blog_list(request):
     }
     return render(request, "blog_list.html", context)
     
-def blog_create(request):
-    return HttpResponse("<h1>Create</h1>")
-
 def blog_detail(request, id=None):
     blog = get_object_or_404(Blog, id=id)
 
@@ -27,8 +24,9 @@ def blog_detail(request, id=None):
     }
     return render(request, "blog_detail.html", context)
 
-def blog_update(request):
-    return HttpResponse("<h1>Update</h1>")
-
-def blog_delete(request):
-    return HttpResponse("<h1>Delete</h1>")
+# i don't know if i'll actually needs these
+# i'll just do these through the admin view 
+'''
+    def blog_update(request):
+    def blog_delete(request):
+'''

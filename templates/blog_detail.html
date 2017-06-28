@@ -1,4 +1,8 @@
-<body>
+{% extends "base.html" %}
+{% load markup_tags %}
+
+{% block content %}
     <h1> You are reading the {{ obj.title }} blog post </h1>
-    <p> {{ obj.content }} </p>
-</body>
+    <!-- rendering the markup blog -->
+    {{ obj.content|apply_markup:"markdown" }} 
+{% endblock content %}
