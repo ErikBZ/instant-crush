@@ -12,16 +12,24 @@
 </head>
 
 <body>
-    <div id="navbar" class="navbar navbar-default">
+    <nav id="navbar" class="navbar navbar-default">
         <div class="navbar-header navbar-left">
             <ul class="nav">
                 <li class="nav-item"><a href="">My Projects</a></li>
                 <li class="nav-item"><a href="">Contact Me</a></li>
             </ul>
         </div>
-    </div> <!-- navbar-default -->
+    </nav> <!-- navbar-default -->
 
-    <div class='content' style="margin:auto;width:70%"> {% block content %}
-        {% endblock content %}
+    <div class='view'>
+        <div class='content'> 
+            {% block content %}
+            {% endblock content %}
+        </div>
+        <div class='sidebar'>
+            <p> this will jus tbe some texa dklfjasldfkj
+            asdflkjasdflkjasdf asdkljf hsakdjfh
+            <p>
+        </div>
     </div>
 </body>
