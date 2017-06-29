@@ -2,10 +2,23 @@
 
 {% block content %} 
 
+    <!-- TODO add the quote block here -->
+    <div>
+    </div>
+
     <h1> Here's a list of all the blogs in no particular order!</h1>
 
-    {% for obj in objects %}
-        <a href='{{ obj.get_url }}'> {{ obj.title }}</a><br/>
-    {% endfor %}
+    <!-- all the available blogs -->
+    <div class="row">
+        <div class="col-xs-6 col-md-3">
+        {% for obj in objects %}
+            <div class="thumbnail">
+                <h3><a href='{{ obj.get_url }}'> {{ obj.title }}</a></h3>
+                {# change this to summary #}
+                <p>{{ obj.summary }}</p>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
 
 {% endblock content %}

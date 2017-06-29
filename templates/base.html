@@ -1,27 +1,25 @@
 <!-- DOCTYPE html -->
 <!-- this is what wraps around all the content. -->
 
-{% load staticfiles %}
+{% load static %}
 
 <head>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="/static/css/base.css"/>
+    <link rel="stylesheet" href="{% static "css/base.css" %}" alt="NoWork"/>
 
 </head>
 
 <body>
-    <div class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header navbar-left">
-                <ul>
-                    <li><a href="">My Projects</a></li>
-                    <li><a href="">Contact Me</a></li>
-                </ul>
-            </div>
+    <div id="navbar" class="navbar navbar-default">
+        <div class="navbar-header navbar-left">
+            <ul class="nav">
+                <li class="nav-item"><a href="">My Projects</a></li>
+                <li class="nav-item"><a href="">Contact Me</a></li>
+            </ul>
         </div>
-    </div>
+    </div> <!-- navbar-default -->
 
     <div class='content' style="margin:auto;width:70%"> {% block content %}
         {% endblock content %}

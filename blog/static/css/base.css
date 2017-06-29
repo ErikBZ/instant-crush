@@ -1,0 +1,18 @@
+/* overriding 10px leftover under li a */
+#navbar{
+    padding-left:15%;
+    padding-right:15%;
+    min-height: 40px;
+}
+
+nav{
+    list-style-type: none;
+}
+
+li.nav-item{
+    float: left;
+}
+
+li.nav-item a{
+    display:block;
+}
