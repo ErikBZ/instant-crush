@@ -5,6 +5,7 @@ from . import admin, views
 from .views import (
     blog_list,
     blog_detail,
+    contact_me,
 )
 
 urlpatterns = [

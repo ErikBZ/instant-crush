@@ -24,6 +24,9 @@ def blog_detail(request, id=None):
     }
     return render(request, "blog_detail.html", context)
 
+def contact_me(request):
+    return render(request, "contact_me.html")
+
 # i don't know if i'll actually needs these
 # i'll just do these through the admin view 
 '''

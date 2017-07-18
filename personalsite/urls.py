@@ -18,6 +18,7 @@ from django.contrib import admin
 # as of django 1.10 you must import the function
 # and pass that in
 from blog import views as blog_view
+from blog.views import contact_me
 
 # TAKES THIS OUT BEFORE PRODUCTION
 from django.conf import settings
@@ -27,6 +28,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include("blog.urls")),
     #url(r'^blog/$', <function_name>) after you have imported the function
+    url(r'contact/', contact_me),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
