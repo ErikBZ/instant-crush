@@ -1,8 +1,21 @@
+/* need to choose a nice looking font since the default sucks */
+*{
+    font-family:Ubuntu;
+}
+
 /* overriding 10px leftover under li a */
 #navbar{
     padding-left:15%;
     padding-right:15%;
     min-height: 40px;
+}
+
+p{
+    font-size:1.5em;
+}
+
+td{
+    font-size:1em;
 }
 
 .nav{
@@ -18,16 +31,17 @@ li.nav-item a{
 }
 
 .view{
-    width:70%;
+    width:60%;
     margin:auto;
 }
 
 /* content stuff */
 .content{
-    float:left;
+    overflow:hidden;
 }
 
 /* side bar stuff */
 .sidebar{
+    width:30%;
     float:right;    
 }

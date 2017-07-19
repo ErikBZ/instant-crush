@@ -9,7 +9,7 @@ from .views import (
 )
 
 urlpatterns = [
-    url(r'^$', blog_list),
+    url(r'^$', blog_list, name="blog_list"),
     # this is used for letting the url decide which blog
     # id to open
     # apprently it needs to be name="thing"

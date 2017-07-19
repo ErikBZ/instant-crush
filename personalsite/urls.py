@@ -28,7 +28,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include("blog.urls")),
     #url(r'^blog/$', <function_name>) after you have imported the function
-    url(r'contact/', contact_me),
+    url(r'contact/', contact_me, name='contact'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

@@ -8,7 +8,7 @@ class Quotes(models.Model):
     author_last = models.CharField(max_length=50)
     quote = models.TextField()
 
-    #to string
+    # to string
     def __unicode__(self):
         return self.author_last + ", " + author_first
     
@@ -23,7 +23,7 @@ class Blog(models.Model):
     content = models.TextField()
     summary = models.TextField()
 
-    #to string
+    # to string
     def __unicode__(self):
         return self.title
 
