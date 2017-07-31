@@ -6,6 +6,7 @@ from .views import (
     blog_list,
     blog_detail,
     contact_me,
+    project_list,
 )
 
 urlpatterns = [

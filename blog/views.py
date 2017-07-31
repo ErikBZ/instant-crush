@@ -21,11 +21,30 @@ def blog_detail(request, id=None):
 
     context = {
         "obj" : blog,
+        "title" : blog.title,
     }
     return render(request, "blog_detail.html", context)
 
+# just blog_list but with projects specifically
+# just uses blog_detaili for the actual detail page
+
+def project_list(request):
+    queryset = Blog.objects.filter(is_project__exact=True);
+
+    context = {
+        "objects" : queryset,
+        "title": "Projects",
+    }
+
+    return render(request, "blog_list.html", context)
+
 def contact_me(request):
-    return render(request, "contact_me.html")
+    context = {
+        "title": "Contact Me",
+    }
+
+    return render(request, "contact_me.html", context)
+
 
 # i don't know if i'll actually needs these
 # i'll just do these through the admin view 

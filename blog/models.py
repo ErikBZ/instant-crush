@@ -22,6 +22,7 @@ class Blog(models.Model):
     # a bunch of text 
     content = models.TextField()
     summary = models.TextField()
+    is_project = models.BooleanField(default=False)
 
     # to string
     def __unicode__(self):

@@ -15,7 +15,7 @@ p{
 }
 
 td{
-    font-size:1em;
+    font-size:1.25em;
 }
 
 .nav{
@@ -31,17 +31,12 @@ li.nav-item a{
 }
 
 .view{
-    width:60%;
+    width:70%;
     margin:auto;
 }
 
 /* content stuff */
 .content{
-    overflow:hidden;
-}
-
-/* side bar stuff */
-.sidebar{
-    width:30%;
-    float:right;    
+    width:80%;
+    margin:auto;
 }

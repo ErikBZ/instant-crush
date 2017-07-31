@@ -19,6 +19,7 @@ from django.contrib import admin
 # and pass that in
 from blog import views as blog_view
 from blog.views import contact_me
+from blog.views import project_list
 
 # TAKES THIS OUT BEFORE PRODUCTION
 from django.conf import settings
@@ -27,9 +28,11 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include("blog.urls")),
+    url(r'^projects/', project_list, name="project_list"),
     #url(r'^blog/$', <function_name>) after you have imported the function
-    url(r'contact/', contact_me, name='contact'),
+    url(r'whoami/', contact_me, name="whoami"),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# ^^^ remove that shit in prod
 
 
 # as of django 1.10 this is not correct

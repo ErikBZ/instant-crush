@@ -11,6 +11,8 @@
     <!-- all the available blogs -->
     <div class="row">
         <div class="col-xs-12 col-md-10">
+        {# I'll need to make and if else block here whenever the query set returns 0 #}
+            <p> {{ objects.count }}</p>
         {% for obj in objects %}
             <div class="thumbnail">
                 <h3><a href='{{ obj.get_url }}'> {{ obj.title }}</a></h3>
