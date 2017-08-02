@@ -1,26 +1,33 @@
 {% extends "base.html" %}
+{# I have to make sure that i load static for each file if i'm going to use it #}
+{% load static %}
+
+{% block link %}
+	<link rel="stylesheet" href="{% static "css/list.css" %}"/>
+{% endblock link %}
 
 {% block content %} 
 
-    <!-- TODO add the quote block here -->
-    <div>
-    </div>
 
-    <h1> Here's a list of all the blogs in no particular order!</h1>
+    <h1>Welcome!</h1>
+
+	<div>
+		<!-- block quote goes here -->
+		<blockquote> This is some quote by some random ass dude</blockquote>
+	</div>
 
     <!-- all the available blogs -->
-    <div class="row">
-        <div class="col-xs-12 col-md-10">
-        {# I'll need to make and if else block here whenever the query set returns 0 #}
-            <p> {{ objects.count }}</p>
-        {% for obj in objects %}
-            <div class="thumbnail">
-                <h3><a href='{{ obj.get_url }}'> {{ obj.title }}</a></h3>
-                {# change this to summary #}
-                <p>{{ obj.summary }}</p>
-            </div>
-        {% endfor %}
-        </div>
-    </div>
+	<div class="row">
+	{% for obj in objects %}
+		<div class="col-sm-4 card-bottom-padding"> 
+			<div class="card text-center card-line">
+				<div class="card-block" style="margin:auto">
+					<h3 class="card-title"> {{ obj.title }} </h3>
+					<p class="card-text"> {{ obj.get_summary }}</p>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+	</div>
 
 {% endblock content %}

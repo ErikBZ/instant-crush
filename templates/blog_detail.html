@@ -3,8 +3,7 @@
 
 {% block content %}
 <div class="content">
-    <h1> You are reading the {{ obj.title }} blog post </h1>
-    <!-- rendering the markup blog -->
+    <!-- rendering the markdown blog -->
     {{ obj.content|apply_markup:"markdown" }} 
 </div>
 {% endblock content %}

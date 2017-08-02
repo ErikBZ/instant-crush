@@ -33,3 +33,13 @@ class Blog(models.Model):
 
     def get_url(self):
         return reverse("blog_detail", kwargs={"id": self.id})
+
+    def get_summary(self):
+        chars = self.content[0:200]
+        sum = ""
+
+        for i in range(len(chars)-1, -1 ,-1):
+            if chars[i] == ' ':
+                sum = chars[0:i]
+        
+        return chars

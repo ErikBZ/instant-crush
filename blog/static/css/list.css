@@ -1,0 +1,15 @@
+cel{
+	padding: 10px;
+}
+
+div.card-bottom-padding{
+	padding-bottom:30px;
+}
+
+div.card-line{
+	height: 220px;
+	overflow: hidden;
+	border: 1px solid;
+	border-color: lightgrey;
+	border-radius: 5px;
+}
