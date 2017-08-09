@@ -1,0 +1,13 @@
+img{
+	width: 100%;
+	margin: auto;
+	padding: 20px;
+}
+
+code{
+	overflow: auto;
+}
+
+pre{
+	overflow: auto;
+}

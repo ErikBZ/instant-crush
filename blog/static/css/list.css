@@ -7,9 +7,29 @@ div.card-bottom-padding{
 }
 
 div.card-line{
-	height: 220px;
+	height: 240px;
 	overflow: hidden;
 	border: 1px solid;
 	border-color: lightgrey;
-	border-radius: 5px;
+	border-radius: 2px;
+}
+
+div.card-color{
+	background-color: #ffffff;
+}
+
+div.inner-card-padding{
+	padding-left: 10px;
+}
+
+p.summary-text{
+	font-size: 1.7rem;
+}
+
+h3.no-highlight{	
+	color: #3f3f3f;
+}
+-
+a h3.no-highlight:hover{
+	text-decoration: none;
 }

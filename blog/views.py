@@ -12,7 +12,7 @@ def blog_list(request):
     context = {
         "content" : queryset[0].content,
         "objects" : queryset,
-        "title" : "Home"
+        "title" : "Blogs"
     }
     return render(request, "blog_list.html", context)
     
@@ -33,7 +33,7 @@ def project_list(request):
 
     context = {
         "objects" : queryset,
-        "title": "Projects",
+        "title": "Take a look at my Projects",
     }
 
     return render(request, "blog_list.html", context)

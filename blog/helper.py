@@ -30,6 +30,7 @@ def update(blog_name, is_proj):
         obj.title = blog_name
         obj.content = file
         obj.pub_date = now()
+        obj.is_project = is_proj
         print("Entry does not exist. Creating new entry")
 
     obj.content = file

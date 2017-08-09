@@ -9,25 +9,27 @@
 {% block content %} 
 
 
-    <h1>Welcome!</h1>
+	<h1> {{title}} </h1>
+	<br>
 
-	<div>
-		<!-- block quote goes here -->
-		<blockquote> This is some quote by some random ass dude</blockquote>
-	</div>
+	<!-- once i have some quotes in the database add the quotes section -->
 
     <!-- all the available blogs -->
-	<div class="row">
-	{% for obj in objects %}
-		<div class="col-sm-4 card-bottom-padding"> 
-			<div class="card text-center card-line">
-				<div class="card-block" style="margin:auto">
-					<h3 class="card-title"> {{ obj.title }} </h3>
-					<p class="card-text"> {{ obj.get_summary }}</p>
+	{% if objects %}
+		<div class="row">
+		{% for obj in objects %}
+			<div class="col-md-4 card-bottom-padding"> 
+				<div class="card card-line card-color">
+					<div class="card-block inner-card-padding">
+						<a href="{{ obj.get_url }}"><h3 class="card-title no-highlight"> {{ obj.title }} </h3></a>
+						<p class="card-text summary-text"> {{ obj.get_summary }}[...]</p>
+					</div>
 				</div>
 			</div>
+		{% endfor %}
 		</div>
-	{% endfor %}
-	</div>
+	{% else %}
+		<h2> Sorry there isn't anything here yet</h2>
+	{% endif %}
 
 {% endblock content %}

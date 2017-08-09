@@ -20,14 +20,16 @@ from django.contrib import admin
 from blog import views as blog_view
 from blog.views import contact_me
 from blog.views import project_list
+from django.views.generic.base import RedirectView
 
 # TAKES THIS OUT BEFORE PRODUCTION
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    url(r'^$', RedirectView.as_view(url="/blog/", permanent=True)),
     url(r'^admin/', admin.site.urls),
-    url(r'^blog/', include("blog.urls")),
+    url(r'^blog/', include("blog.urls"), name="home"),
     url(r'^projects/', project_list, name="project_list"),
     #url(r'^blog/$', <function_name>) after you have imported the function
     url(r'whoami/', contact_me, name="whoami"),
