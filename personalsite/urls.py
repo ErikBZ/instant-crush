@@ -29,14 +29,11 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^$', RedirectView.as_view(url="/blog/", permanent=True)),
     url(r'^contact$', RedirectView.as_view(url="/whoami", permanent=True)),
-    url(r'^admin/', admin.site.urls),
     url(r'^blog/', include("blog.urls"), name="home"),
     url(r'^projects/', project_list, name="project_list"),
     #url(r'^blog/$', <function_name>) after you have imported the function
     url(r'whoami/', contact_me, name="whoami"),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-# ^^^ remove that shit in prod
-
+]
 
 # as of django 1.10 this is not correct
 #url(r'^blog/$', "<appname>.views.<function_name")

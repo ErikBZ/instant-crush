@@ -25,7 +25,7 @@ SECRET_KEY = 'kli$9&^gh@$y&6p0+-)lvx-_*s9xn$v89uhi=w(ahhr+vh79n)'
 # at least it's hidden in a private repo
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 

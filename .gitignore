@@ -1,5 +1,7 @@
 *.pyc
 *.swp
 db.sqlite3
+personalsite/urls.py
+personalsite/settings.py
 
 __pycahce__/
