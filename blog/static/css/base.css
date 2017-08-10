@@ -25,6 +25,7 @@ td{
 
 li.nav-item{
     float: left;
+	font-size: 15px;
 }
 
 li.nav-item a{
@@ -45,8 +46,17 @@ li.nav-item a:hover{
 	font-family: DejaVu serif;
 }
 
+button a{
+	color: #1f1f1f;
+}
+
 /* content stuff */
 .content{
     width:80%;
     margin:auto;
+}
+
+/* Stuff for the contact me section */
+li{
+	font-size: 18px;
 }

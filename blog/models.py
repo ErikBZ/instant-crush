@@ -21,7 +21,6 @@ class Blog(models.Model):
     pub_date = models.DateTimeField('date published')
     # a bunch of text 
     content = models.TextField()
-    summary = models.TextField()
     is_project = models.BooleanField(default=False)
 
     # to string

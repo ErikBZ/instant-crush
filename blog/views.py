@@ -10,7 +10,6 @@ def blog_list(request):
     queryset = Blog.objects.all();
 
     context = {
-        "content" : queryset[0].content,
         "objects" : queryset,
         "title" : "Blogs"
     }

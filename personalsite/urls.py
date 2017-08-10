@@ -28,6 +28,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', RedirectView.as_view(url="/blog/", permanent=True)),
+    url(r'^contact$', RedirectView.as_view(url="/whoami", permanent=True)),
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include("blog.urls"), name="home"),
     url(r'^projects/', project_list, name="project_list"),
