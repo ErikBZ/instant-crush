@@ -20,14 +20,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'kli$9&^gh@$y&6p0+-)lvx-_*s9xn$v89uhi=w(ahhr+vh79n)'
+#SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = "kli&^gh@&6p0+-)lvx-_*s9xn=w(ahhr+vh79n)"
 # need to get another secret key now that this one is on the internet
 # at least it's hidden in a private repo
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["erik-is.me"]
 
 
 # Application definition
@@ -76,11 +77,16 @@ WSGI_APPLICATION = 'personalsite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+# password = os.environ["POSTGRES_PASS"]
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'personal',
+        'USER': 'erik_me',
+        'PASSWORD': "50mething4boutUs1-L3441Know",
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -123,15 +129,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIR = [
-    os.path.join(BASE_DIR, "static"),
-]
-
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-X_FRAME_OPTIONS = True
+X_FRAME_OPTIONS = "DENY"

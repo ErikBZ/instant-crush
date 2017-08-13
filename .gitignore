@@ -3,5 +3,7 @@
 db.sqlite3
 personalsite/urls.py
 personalsite/settings.py
+static/
+migrations/
 
 __pycahce__/
