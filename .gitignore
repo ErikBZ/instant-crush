@@ -4,6 +4,9 @@
 *.sql
 *.sqlite
 db.sqlite3
+personalsite/settings.py
+personalsite/urls.py
+migrations/
 
 urls.py
 settings.py
