@@ -1,5 +1,6 @@
 import os
-import blog.models
+from django.utils.timezone import now
+from blog.models import Blog
 from blog.helper import update
 
 def create_obj(name, file_content, is_proj):
@@ -28,15 +29,22 @@ def check_files(project):
         elif "draft" not in f and ".md" in f:
             content = ""
             dir = os.path.join(curr_dur, f)
-            with open(dir) as f:
-                content = f.read()
-            print(content)
+            md_title = strip_file_type(f)
+            with open(dir) as file:
+                content = file.read()
+
+            if Blog.objects.filter(title=md_title):
+                update_obj(Blog.objects.get(title=md_title), content)
+            else:
+                create_obj(md_title, content, project)
+
+
         # do nothing for everything else
 
 def strip_file_type(file_name):
     if len(file_name) < 4:
         raise Exception("File name too short should be more than 3 characters")
-    print("hello")
+    return file_name[:len(file_name)-3]
 
 def update():
     abs_pth = os.path.abspath(os.curdir)
