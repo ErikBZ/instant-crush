@@ -7,11 +7,11 @@ db.sqlite3
 personalsite/settings.py
 personalsite/urls.py
 migrations/
+#this is actually for the base static file
+#where the static files are migrated to
+static/
 
 urls.py
 settings.py
-
-static/
-migrations/
 
 __pycahce__/
