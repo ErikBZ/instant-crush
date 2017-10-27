@@ -1,5 +1,6 @@
 import os
 import blog.models
+from blog.models import Blog
 from blog.helper import update
 
 def create_obj(name, file_content, is_proj):
